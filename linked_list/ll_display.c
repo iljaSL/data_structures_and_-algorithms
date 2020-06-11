@@ -6,7 +6,7 @@
 /*   By: ismelich <ismelich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 09:48:41 by ismelich          #+#    #+#             */
-/*   Updated: 2020/06/10 09:51:16 by ismelich         ###   ########.fr       */
+/*   Updated: 2020/06/11 09:53:52 by ismelich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,9 +245,47 @@ int             delete_node(struct Node *p, int index)
     return x;
 }
 
+// check if the linked list is sorted
+
+int             is_sorted(struct Node *p)
+{
+    int x = -65536;
+
+    while (p != NULL)
+    {
+        if (p->data < x)
+            return 0;
+        x = p->data;
+        p = p->next;
+    }
+    return 1;
+}
+
+// Removing duplicates in a linked list
+
+void            remove_duplicate(struct Node *p)
+{
+    struct Node *tail = p->next;
+
+    while (tail != NULL)
+    {
+        if (p->data != tail->data)
+        {
+            p = tail;
+            tail = tail->next;
+        }
+        else
+        {
+            p->next = tail->next;
+            free (tail);
+            tail = p->next;
+        }
+    }
+}
+
 int              main()
 {
-    int A[] = {3, 5, 6, 7, 10, 15};
+    int A[] = {3, 5, 6, 7, 7, 20, 20, 15};
     struct Node *tmp;
 
     create(A, 6);
@@ -265,7 +303,9 @@ int              main()
     //     printf("Key Not found\n");
     // insert(first, 1, 55);
     // sorted_insert(first, 4);
-    delete_node(first, 2);
+    // delete_node(first, 2);
+    // printf("%d\n", is_sorted(first));
+    // remove_duplicate(first);
     display(first);
 
 
