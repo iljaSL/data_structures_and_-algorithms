@@ -17,7 +17,8 @@ How to use:
 
 <br>
 
-<ul>Functions include in linked_list:
+<ul>
+<p>Functions include in linked_list:</p>
 <li>Display Linked List</li>
 <li>Count and return the sum of the Linked List</li>
 <li>Max number of a Linked List</li>
