@@ -18,7 +18,7 @@ How to use:
 <br>
 
 <ul>
-<p>Functions include in linked_list:</p>
+<h3>Functions added to the linked_list dir:</h3>
 <li>Display Linked List</li>
 <li>Count and return the sum of the Linked List</li>
 <li>Max number of a Linked List</li>
