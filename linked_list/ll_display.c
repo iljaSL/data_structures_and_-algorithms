@@ -6,7 +6,7 @@
 /*   By: ismelich <ismelich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 09:48:41 by ismelich          #+#    #+#             */
-/*   Updated: 2020/06/12 10:52:38 by ismelich         ###   ########.fr       */
+/*   Updated: 2020/06/12 11:01:28 by ismelich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,6 +283,8 @@ void            remove_duplicate(struct Node *p)
     }
 }
 
+// Reverse a linked list
+
 void            sec_reverse_ll(struct Node *p)
 {
     struct Node *tail = NULL;
@@ -320,6 +322,8 @@ void            reverse_ll(struct Node *p)
         i--;
     }
 }
+
+// Reverse a linked list recursively
 
 void            reverse_recursiv_ll(struct Node *tail, struct Node *p)
 {
