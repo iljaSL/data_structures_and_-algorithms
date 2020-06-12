@@ -6,7 +6,7 @@
 /*   By: ismelich <ismelich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 09:48:41 by ismelich          #+#    #+#             */
-/*   Updated: 2020/06/11 09:53:52 by ismelich         ###   ########.fr       */
+/*   Updated: 2020/06/12 10:52:38 by ismelich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,12 +283,61 @@ void            remove_duplicate(struct Node *p)
     }
 }
 
+void            sec_reverse_ll(struct Node *p)
+{
+    struct Node *tail = NULL;
+    struct Node *sec_tail = NULL;
+
+    while (p != NULL)
+    {
+        sec_tail = tail;
+        tail = p;
+        p = p->next;
+        tail->next = sec_tail;
+    }
+    first = tail;
+}
+
+void            reverse_ll(struct Node *p)
+{
+    int         *A;
+    int         i = 0;
+    struct Node *tail = p;
+
+    A = (int *)malloc(sizeof(int) * count(p));
+    while (tail != NULL)
+    {
+        A[i] = tail->data;
+        tail = tail->next;
+        i++;
+    }
+    tail = p;
+    i--;
+    while (tail != NULL)
+    {
+        tail->data = A[i];
+        tail = tail->next;
+        i--;
+    }
+}
+
+void            reverse_recursiv_ll(struct Node *tail, struct Node *p)
+{
+    if (p)
+    {
+        reverse_recursiv_ll(p, p->next);
+        p->next = tail;
+    }
+    else
+        first = tail;
+}
+
 int              main()
 {
     int A[] = {3, 5, 6, 7, 7, 20, 20, 15};
     struct Node *tmp;
 
-    create(A, 6);
+    create(A, 8);
     // tmp = search_node(first, 15);
     // display(first);
     // printf("Length is: %d\n", count(first));
@@ -306,6 +355,9 @@ int              main()
     // delete_node(first, 2);
     // printf("%d\n", is_sorted(first));
     // remove_duplicate(first);
+    // reverse_ll(first);
+    // sec_reverse_ll(first);
+    reverse_recursiv_ll(NULL, first);
     display(first);
 
 
