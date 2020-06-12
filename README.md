@@ -28,5 +28,6 @@ How to use:
 <li>Delete a node in a Linked List</li>
 <li>Check if Linked List is sorted</li>
 <li>Remove duplicates in a Linked List</li>
+<li>Reverse a Linked List</li>
 </ul>
 
