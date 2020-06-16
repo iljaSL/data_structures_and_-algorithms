@@ -6,7 +6,7 @@
 /*   By: ismelich <ismelich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 09:48:41 by ismelich          #+#    #+#             */
-/*   Updated: 2020/06/12 11:01:28 by ismelich         ###   ########.fr       */
+/*   Updated: 2020/06/16 09:10:35 by ismelich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ struct          Node
 {
     int data;
     struct Node *next;
-}               *first = NULL;
+}               *first = NULL, *second = NULL, *third = NULL;
 
 // Creating the linked list
 
@@ -37,6 +37,26 @@ void            create(int A[], int n)
     {
         tmp = (struct Node *)malloc(sizeof(struct Node));
         tmp->data = A[i];
+        tmp->next = NULL;
+        last->next = tmp;
+        last = tmp;
+    }
+}
+
+void            create_second(int B[], int n)
+{
+    int i;
+    struct Node *tmp, *last;
+
+    second = (struct Node *)malloc(sizeof(struct Node));
+    second->data = B[0];
+    second->next = NULL;
+    last = second;
+
+    for (i = 1; i < n; i++)
+    {
+        tmp = (struct Node *)malloc(sizeof(struct Node));
+        tmp->data = B[i];
         tmp->next = NULL;
         last->next = tmp;
         last = tmp;
@@ -336,12 +356,66 @@ void            reverse_recursiv_ll(struct Node *tail, struct Node *p)
         first = tail;
 }
 
+// Appending a linked list to another linked list
+
+void            append_ll(struct Node *p, struct Node *q)
+{
+    third = p;
+
+    while (p->next != NULL)
+        p = p->next;
+    p->next = q;
+}
+
+// Mergin two linked list
+
+void            merge(struct Node *p, struct Node *q)
+{
+    struct Node *last;
+
+    if (p->data < q->data)
+    {
+        third = last = p;
+        p = p->next;
+        third->next = NULL;
+    }
+    else
+    {
+        third = last = q;
+        q = q->next;
+        third->next = NULL;
+    }
+    while (p && q)
+    {
+        if (p->data < q->data)
+        {
+            last->next = p;
+            last = p;
+            p = p->next;
+            last->next = NULL;
+        }
+        else
+        {
+            last->next = q;
+            last = q;
+            q = q->next;
+            last->next = NULL;
+        }
+    }
+    if (p)
+        last->next = p;
+    if (q)
+        last->next = q;
+}
+
 int              main()
 {
     int A[] = {3, 5, 6, 7, 7, 20, 20, 15};
+    int B[] = {3, 9, 6, 12, 14, 13, 11, 1};
     struct Node *tmp;
 
     create(A, 8);
+    create_second(B, 8);
     // tmp = search_node(first, 15);
     // display(first);
     // printf("Length is: %d\n", count(first));
@@ -361,8 +435,10 @@ int              main()
     // remove_duplicate(first);
     // reverse_ll(first);
     // sec_reverse_ll(first);
-    reverse_recursiv_ll(NULL, first);
-    display(first);
+    // reverse_recursiv_ll(NULL, first);
+    // append_ll(first, second);
+    merge(first, second);
+    display(third);
 
 
     return 0;
