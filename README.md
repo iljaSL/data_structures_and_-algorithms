@@ -18,16 +18,18 @@ How to use:
 <br>
 
 <ul>
-<h3>Functions added to the linked_list dir:</h3>
-<li>Display Linked List</li>
-<li>Count and return the sum of the Linked List</li>
-<li>Max number of a Linked List</li>
-<li>Search a node in a Linked List</li>
-<li>Insert a node in a Linked List</li>
-<li>Insert a node in a sorted Linked List</li>
-<li>Delete a node in a Linked List</li>
-<li>Check if Linked List is sorted</li>
-<li>Remove duplicates in a Linked List</li>
-<li>Reverse a Linked List</li>
+  <h3>Functions added to the linked_list dir:</h3>
+  <li>Display Linked List</li>
+  <li>Count and return the sum of the Linked List</li>
+  <li>Max number of a Linked List</li>
+  <li>Search a node in a Linked List</li>
+  <li>Insert a node in a Linked List</li>
+  <li>Insert a node in a sorted Linked List</li>
+  <li>Delete a node in a Linked List</li>
+  <li>Check if Linked List is sorted</li>
+  <li>Remove duplicates in a Linked List</li>
+  <li>Reverse a Linked List</li>
+  <li>Append a Linked List</li>
+  <li>Merge Linked Lists</li>
 </ul>
 
