@@ -6,7 +6,7 @@
 /*   By: ismelich <ismelich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 09:48:41 by ismelich          #+#    #+#             */
-/*   Updated: 2020/06/16 09:10:35 by ismelich         ###   ########.fr       */
+/*   Updated: 2020/06/18 10:50:12 by ismelich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 // The struct of the linked list
 
-struct          Node 
+struct          Node
 {
     int data;
     struct Node *next;
@@ -408,14 +408,39 @@ void            merge(struct Node *p, struct Node *q)
         last->next = q;
 }
 
+// Detecting a loop in a linked list
+
+int             is_loop(struct Node *f)
+{
+    struct Node *p, *q;
+    p = q = f;
+
+    do
+    {
+        p = p->next;
+        q = q->next;
+        q = q ? q->next : q;
+    } while (p && q && p != q);
+
+    if (p == q)
+        return 1;
+    else
+        return 0;
+}
+
 int              main()
 {
-    int A[] = {3, 5, 6, 7, 7, 20, 20, 15};
-    int B[] = {3, 9, 6, 12, 14, 13, 11, 1};
-    struct Node *tmp;
+    struct Node *t1, *t2;
+    int A[] = {3, 5, 6, 7, 7};
+    // int B[] = {3, 9, 6, 12, 14, 13, 11, 1};
+    // struct Node *tmp;
 
-    create(A, 8);
-    create_second(B, 8);
+    t1 = first->next->next;
+    t2 = first->next->next->next->next;
+    t2->next = t1;
+
+    create(A, 5);
+    // create_second(B, 8);
     // tmp = search_node(first, 15);
     // display(first);
     // printf("Length is: %d\n", count(first));
@@ -437,8 +462,9 @@ int              main()
     // sec_reverse_ll(first);
     // reverse_recursiv_ll(NULL, first);
     // append_ll(first, second);
-    merge(first, second);
-    display(third);
+    // merge(first, second);
+    printf("%d\n", is_loop(first));
+    // display(third);
 
 
     return 0;
