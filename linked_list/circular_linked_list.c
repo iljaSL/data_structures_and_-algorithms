@@ -6,7 +6,7 @@
 /*   By: ismelich <ismelich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 15:18:18 by ismelich          #+#    #+#             */
-/*   Updated: 2020/08/05 15:33:02 by ismelich         ###   ########.fr       */
+/*   Updated: 2020/08/06 12:14:03 by ismelich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,65 @@ void    recursive_display(struct Node *h)
     flag = 0;
 }
 
+// Check the length of the linke list
+
+int     length(struct Node *p)
+{
+    int len = 0;
+
+    do
+    {
+        len++;
+        p =p->next;
+    } while (p != Head);
+    return len;
+}
+
+// Insert Node in a circular linked list
+
+void    insert(struct Node *h, int index, int x)
+{
+    struct Node *t;
+    int         i;
+
+    if (index < 0 || index > length(h))
+        return;
+    if (index == 0)
+    {
+        t = (struct Node *)malloc(sizeof(struct Node));
+        t->data = x;
+        if (Head == NULL)
+        {
+            Head = t;
+            Head->next = Head;
+        }
+        else
+        {
+            while (h->next != Head)
+                h = h->next;
+            h->next = t;
+            t->next = Head;
+            Head = t;
+        }
+    }
+    else
+    {
+        for (i = 0; i < index - 1; i++)
+            h = h->next;
+        t = (struct Node *)malloc(sizeof(struct Node));
+        t->data = x;
+        t->next = h->next;
+        h->next = t;
+    }
+}
+
 int     main()
 {
     int A[] = {2, 3, 4, 5, 6};
     create(A, 5);
 
     // display(Head);
+    insert(Head, 2, 10);
     recursive_display(Head);
     return 0;
 }
