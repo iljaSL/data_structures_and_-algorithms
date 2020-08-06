@@ -19,17 +19,21 @@ How to use:
 
 <ul>
   <h3>Functions added to the linked_list dir:</h3>
+  <h5>Inside ll_display program</h5>
   <li>Display Linked List</li>
-  <li>Count and return the sum of the Linked List</li>
-  <li>Max number of a Linked List</li>
-  <li>Search a node in a Linked List</li>
-  <li>Insert a node in a Linked List</li>
-  <li>Insert a node in a sorted Linked List</li>
-  <li>Delete a node in a Linked List</li>
-  <li>Check if Linked List is sorted</li>
-  <li>Remove duplicates in a Linked List</li>
-  <li>Reverse a Linked List</li>
-  <li>Append a Linked List</li>
-  <li>Merge Linked Lists</li>
+  <li>Count and return the sum of the linked list</li>
+  <li>Max number of a linked list</li>
+  <li>Search a node in a linked list</li>
+  <li>Insert a node in a linked list</li>
+  <li>Insert a node in a sorted linked list</li>
+  <li>Delete a node in a linked list</li>
+  <li>Check if linked list is sorted</li>
+  <li>Remove duplicates in a linked list</li>
+  <li>Reverse a linked list</li>
+  <li>Append a linked list</li>
+  <li>Merge linked lists</li>
+  <p></p>
+  <h5>Inside circular_linked_list program</h5>
+  <li>Display circular linked list</li>
 </ul>
 
