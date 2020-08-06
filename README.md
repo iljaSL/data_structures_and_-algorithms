@@ -35,5 +35,6 @@ How to use:
   <p></p>
   <h5>Inside circular_linked_list program</h5>
   <li>Display circular linked list</li>
+  <li>Insert node in a circular linked list</li>
 </ul>
 
