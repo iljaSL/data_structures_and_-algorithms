@@ -37,5 +37,7 @@ How to use:
   <li>Display circular linked list</li>
   <li>Insert a node in a circular linked list</li>
   <li>Delete node in a curcular linked list</li>
+  <h5>Inside double_ll program</h5>
+  <li>Display double linked list</li>
 </ul>
 
