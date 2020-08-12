@@ -51,12 +51,43 @@ int     length(struct Node *p)
     return len;
 }
 
+void    insert(struct Node *p, int index, int x)
+{
+    struct Node *t;
+    int         i;
+
+    if (index < 0 || index > length(p))
+        return;
+    if (index == 0)
+    {
+        t = (struct Node *)malloc(sizeof(struct Node));
+        t->data = x;
+        t->prev = NULL;
+        t->next = first;
+        first->prev = t;
+        first = t;
+    }
+    else
+    {
+        for (i = 0; i < index - 1; i++)
+            p = p->next;
+        t = (struct Node *)malloc(sizeof(struct Node));
+        t->data = x;
+        t->prev = p;
+        t->next = p->next;
+        if (p->next)
+            p->next->prev = t;
+        p->next = t;
+    }
+}
+
 int     main()
 {
     int A[] = {10, 20, 30, 40, 50};
 
     create(A, 5);
-    printf("The length is: %d\n", length(first));
+    // printf("The length is: %d\n", length(first));
+    insert(first, 2, 90);
     display(first);
     return (0);
 }
