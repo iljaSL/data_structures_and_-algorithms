@@ -81,13 +81,58 @@ void    insert(struct Node *p, int index, int x)
     }
 }
 
+int    delete(struct Node *p, int index)
+{
+    struct Node *q;
+    int         x = -1, i;
+
+    if (index < 1 || index > length(p))
+        return -1;
+    if (index == 1)
+    {
+        first = first->next;
+        if (first)
+            first->prev = NULL;
+        x = p->data;
+        free(p);
+    }
+    else
+    {
+        for (i = 0; i < index - 1; i++)
+            p = p->next;
+        p->prev->next = p->next;
+        if (p->next)
+            p->next->prev = p->prev;
+        x = p->data;
+        free(p);
+    }
+    return x;
+}
+
+void    reverse(struct Node *p)
+{
+    struct Node *tmp;
+
+    while (p != NULL)
+    {
+        tmp = p->next;
+        p->next = p->prev;
+        p->prev = tmp;
+        p = p->prev;
+        if (p != NULL && p->next == NULL)
+            first = p;
+    }
+}
+
 int     main()
 {
     int A[] = {10, 20, 30, 40, 50};
 
     create(A, 5);
     // printf("The length is: %d\n", length(first));
-    insert(first, 2, 90);
+    // insert(first, 2, 90);
+    // delete(first, 3);
+    reverse(first);
     display(first);
     return (0);
 }
