@@ -40,5 +40,7 @@ How to use:
   <h5>Inside double_ll program</h5>
   <li>Display double linked list</li>
   <li>Insert node in a double linked list</li>
+  <li>Delete node in a double linked list</li>
+  <li>Reverse double linked list</li>
 </ul>
 
