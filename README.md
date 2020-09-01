@@ -44,3 +44,8 @@ How to use:
   <li>Reverse double linked list</li>
 </ul>
 
+<ul>
+  <h3>Functions added to the recursion dir:</h3>
+  <li>Tree recursion</li>
+</ul>
+
