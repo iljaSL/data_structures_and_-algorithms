@@ -47,5 +47,7 @@ How to use:
 <ul>
   <h3>Functions added to the recursion dir:</h3>
   <li>Tree recursion</li>
+  <li>Indirect recursion</li>
+  <li>Nested recursion</li>
 </ul>
 
