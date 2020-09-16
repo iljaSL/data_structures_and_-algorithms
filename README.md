@@ -49,5 +49,6 @@ How to use:
   <li>Tree recursion</li>
   <li>Indirect recursion</li>
   <li>Nested recursion</li>
+  <li>Factorial, Exponentiation and Sum of natural number functions solved recursive </li>
 </ul>
 
