@@ -51,5 +51,6 @@ How to use:
   <li>Nested recursion</li>
   <li>Factorial, Exponentiation and Sum of natural number functions solved recursive </li>
   <li>Taylor series</li>
+  <li>Fibonacci series</li>
 </ul>
 
