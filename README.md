@@ -52,5 +52,6 @@ How to use:
   <li>Factorial, Exponentiation and Sum of natural number functions solved recursive </li>
   <li>Taylor series</li>
   <li>Fibonacci series</li>
+  <li>Probability function nCr</li>
 </ul>
 
