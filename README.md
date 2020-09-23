@@ -53,5 +53,6 @@ How to use:
   <li>Taylor series</li>
   <li>Fibonacci series</li>
   <li>Probability function nCr</li>
+  <li>Tower of Hanoi solved with recursion</li>
 </ul>
 
