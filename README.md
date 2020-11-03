@@ -58,4 +58,5 @@ How to use:
 <ul>
   <h3>Functions added to the array ADT dir:</h3>
   <li>Insert and append element to array</li>
+  <li>Delete an element in a array</li>
 </ul>
